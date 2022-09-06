@@ -14,11 +14,9 @@ def gatos(request):
 def adoptantes(request):
     return render (request, "adopcionanimal/usuarios.html")
 
-'''
-# SECCION PERROS
 
-def perros(request):
-    return render (request, "adopcionanimal/perros.html")
+# SECCION FORMULARIOS
+
 
 def perrosformulario(request):
 
@@ -35,27 +33,10 @@ def perrosformulario(request):
             return render (request, "adopcionanimal/perros.html", {"mensaje":"Perro Cargado"})
     else:
         form= PerrosFormulario()
-    # return render(request, "Appcoder/profeForm.html", {"formulario":form})
+    return render(request, "adopcionanimal/perrosformulario.html", {"formulario":form})
 
-
-def buscarperro(request):
-    if request.GET["Tamano"]:
-        Tamano=request.GET["Tamano"]
-        Perro=Perros.objects.filter(Tamano=Tamano)
-        return render(request, "Appcoder/resultadosBusqueda.html", {"Tamano":Perro})
-    else:
-        return render(request, "Appcoder/busquedaComision.html", {"mensaje":"No se encuentra Perro"})
-    return HttpResponse(respuesta)
-
-
-
-# SECCION GATOS
-
-def gatos(request):
-    return render (request, "adopcionanimal/gatos.html")
-
-
-def gatosformulario(request):
+'''
+    def gatosformulario(request):
 
     if request.method=="POST":
         form= GatosFormulario(request.POST)
@@ -69,28 +50,11 @@ def gatosformulario(request):
             Gato.save()
             return render (request, "adopcionanimal/gatos.html", {"mensaje":"Gato Cargado"})
     else:
-        form= PerrosFormulario()
-    # return render(request, "Appcoder/profeForm.html", {"formulario":form})
+        form= GatosFormulario()
+    #return render(request, "Appcoder/profeForm.html", {"formulario":form})
 
 
-def buscargato(request):
-    if request.GET["Edad"]:
-        Edad=request.GET["Edad"]
-        Gato=Gatos.objects.filter(Edad=Edad)
-        return render(request, "Appcoder/resultadosBusqueda.html", {"Gato":Gato})
-    else:
-        return render(request, "Appcoder/busquedaComision.html", {"mensaje":"No se encuentra Gato"})
-    return HttpResponse(respuesta)
-
-
-
-# SECCION ADOPTANTES
-
-def usuarios(request):
-    return render (request, "adopcionanimal/usuarios.html")
-
-
-def adoptantesformulario(request):
+def Usuariosformulario(request):
 
     if request.method=="POST":
         form= UsuariosFormulario(request.POST)
@@ -104,28 +68,47 @@ def adoptantesformulario(request):
             Email= info["Email"]
             Usuario= Usuarios(Nombre=Nombre, Apellido=Apellido, Sueldo=Sueldo, Edad=Edad, Direccion=Direccion, Email=Email)
             Usuario.save()
-            return render (request, "adopcionanimal/usuarios.html", {"mensaje":"Usuario Cargado"})
+           #return render (request, "adopcionanimal/usuarios.html", {"mensaje":"Usuario Cargado"})
     else:
         form= UsuariosFormulario()
     # return render(request, "Appcoder/profeForm.html", {"formulario":form})
 
+'''
+#SECCION BUSQUEDA
 
-def buscarUsuario(request):
-    if request.GET["Apellido"]:
-        Apellido=request.GET["Apellido"]
-        Usuario=Usuarios.objects.filter(Apellido=Apellido)
-        return render(request, "Appcoder/resultadosBusqueda.html", {"Usuario":Usuario})
+'''
+def buscarperro(request):
+
+    if request.GET["Tamano"]:
+        Tamano=request.GET["Tamano"]
+        Perro=Perros.objects.filter(Tamano=Tamano)
+        return render(request, "Appcoder/resultadosBusqueda.html", {"Tamano":Perro})
     else:
-        return render(request, "Appcoder/busquedaComision.html", {"mensaje":"No se encuentra Usuario"})
+        return render(request, "Appcoder/busquedaComision.html", {"mensaje":"No se encuentra Perro"})
     return HttpResponse(respuesta)
 
 
+def buscargato(request):
 
+    if request.GET["Edad"]:
+        Edad=request.GET["Edad"]
+        Gato=Gatos.objects.filter(Edad=Edad)
+        #return render(request, "Appcoder/resultadosBusqueda.html", {"Gato":Gato})
+    else:
+        #return render(request, "Appcoder/busquedaComision.html", {"mensaje":"No se encuentra Gato"})
+        #return HttpResponse(respuesta)
 
+def buscarusuario(request):
 
-
-
-#def busquedaComision(request):
-#return render(request, "Appcoder/busquedaComision.html")
+    if request.GET["Apellido"]:
+        Apellido=request.GET["Apellido"]
+        Usuario=Usuarios.objects.filter(Apellido=Apellido)
+        #return render(request, "Appcoder/resultadosBusqueda.html", {"Usuario":Usuario})
+    else:
+       # return render(request, "Appcoder/busquedaComision.html", {"mensaje":"No se encuentra Usuario"})
+  #  return HttpResponse(respuesta)
 
 '''
+#OTRO CODIGO SIN DEFINIR
+#def busquedaComision(request):
+#return render(request, "Appcoder/busquedaComision.html")

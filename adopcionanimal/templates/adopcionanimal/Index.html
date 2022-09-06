@@ -16,6 +16,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'adopcionanimal/css/styles.css' %}" rel="stylesheet" />
+{% block titulo %}
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -36,7 +37,6 @@
             </div>
         </nav>
         <!-- Masthead-->
-{% block titulo %}
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Heading-->

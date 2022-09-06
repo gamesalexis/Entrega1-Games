@@ -1,0 +1,11 @@
+{% extends "adopcionanimal/index.html" %}
+{% load static %}
+
+{% block titulo %}
+<form action="{% url 'perroformulario' %}" method="POST"> {% csrf_token %}
+    <table>
+        {{ formulario.as_table }}
+    </table>
+    <input type="submit" value="Enviar">
+</form>
+{% endblock %}
