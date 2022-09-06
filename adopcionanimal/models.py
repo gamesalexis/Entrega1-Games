@@ -12,7 +12,7 @@ class Gatos(models.Model):
     Tamano=models.CharField(max_length=50)
     Edad= models.IntegerField()
 
-class Adoptantes(models.Model):
+class Usuarios(models.Model):
     Nombre= models.CharField(max_length=50)
     Apellido= models.CharField(max_length=50)
     Sueldo= models.CharField(max_length=50)

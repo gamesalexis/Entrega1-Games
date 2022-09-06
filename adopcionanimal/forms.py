@@ -12,7 +12,7 @@ class GatosFormulario(forms.Form):
     Tamano=forms.CharField(max_length=50)
     Edad= forms.IntegerField()
 
-class AdoptantesFormulario(forms.Form):
+class UsuariosFormulario(forms.Form):
     Nombre= forms.CharField(max_length=50)
     Apellido= forms.CharField(max_length=50)
     Sueldo=forms.CharField(max_length=50)

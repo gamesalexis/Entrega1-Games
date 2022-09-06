@@ -1,10 +1,24 @@
 from django.shortcuts import render
-from .models import *
+from adopcionanimal.models import *
 from django.http import HttpResponse
-from .forms import *
+from adopcionanimal.forms import *
 
+# INICIO
+
+def inicio(request):
+    return render (request, "adopcionanimal/inicio.html")
+def perros(request):
+    return render (request, "adopcionanimal/perros.html")
+def gatos(request):
+    return render (request, "adopcionanimal/gatos.html")
+def adoptantes(request):
+    return render (request, "adopcionanimal/usuarios.html")
+
+'''
 # SECCION PERROS
 
+def perros(request):
+    return render (request, "adopcionanimal/perros.html")
 
 def perrosformulario(request):
 
@@ -18,7 +32,7 @@ def perrosformulario(request):
             Edad= info["Edad"]
             Perro= Perros(Nombre=Nombre, Raza=Raza, Tamano=Tamano, Edad=Edad)
             Perro.save()
-            return render (request, "Appcoder/inicio.html", {"mensaje":"Perro Cargado"})
+            return render (request, "adopcionanimal/perros.html", {"mensaje":"Perro Cargado"})
     else:
         form= PerrosFormulario()
     # return render(request, "Appcoder/profeForm.html", {"formulario":form})
@@ -37,6 +51,8 @@ def buscarperro(request):
 
 # SECCION GATOS
 
+def gatos(request):
+    return render (request, "adopcionanimal/gatos.html")
 
 
 def gatosformulario(request):
@@ -51,7 +67,7 @@ def gatosformulario(request):
             Edad= info["Edad"]
             Gato= Gatos(Nombre=Nombre, Raza=Raza, Tamano=Tamano, Edad=Edad)
             Gato.save()
-            return render (request, "Appcoder/inicio.html", {"mensaje":"Gato Cargado"})
+            return render (request, "adopcionanimal/gatos.html", {"mensaje":"Gato Cargado"})
     else:
         form= PerrosFormulario()
     # return render(request, "Appcoder/profeForm.html", {"formulario":form})
@@ -70,12 +86,14 @@ def buscargato(request):
 
 # SECCION ADOPTANTES
 
+def usuarios(request):
+    return render (request, "adopcionanimal/usuarios.html")
 
 
 def adoptantesformulario(request):
 
     if request.method=="POST":
-        form= AdoptantesFormulario(request.POST)
+        form= UsuariosFormulario(request.POST)
         if form.is_valid():
             info= form.cleaned_data
             Nombre= info["Nombre"]
@@ -84,19 +102,19 @@ def adoptantesformulario(request):
             Edad= info["Edad"]
             Direccion= info["Direccion"]
             Email= info["Email"]
-            Adoptante= Adoptantes(Nombre=Nombre, Apellido=Apellido, Sueldo=Sueldo, Edad=Edad, Direccion=Direccion, Email=Email)
-            Adoptante.save()
-            return render (request, "Appcoder/inicio.html", {"mensaje":"Usuario Cargado"})
+            Usuario= Usuarios(Nombre=Nombre, Apellido=Apellido, Sueldo=Sueldo, Edad=Edad, Direccion=Direccion, Email=Email)
+            Usuario.save()
+            return render (request, "adopcionanimal/usuarios.html", {"mensaje":"Usuario Cargado"})
     else:
-        form= AdoptantesFormulario()
+        form= UsuariosFormulario()
     # return render(request, "Appcoder/profeForm.html", {"formulario":form})
 
 
-def buscaradoptante(request):
+def buscarUsuario(request):
     if request.GET["Apellido"]:
         Apellido=request.GET["Apellido"]
-        Adoptante=Adoptantes.objects.filter(Apellido=Apellido)
-        return render(request, "Appcoder/resultadosBusqueda.html", {"Adoptante":Adoptante})
+        Usuario=Usuarios.objects.filter(Apellido=Apellido)
+        return render(request, "Appcoder/resultadosBusqueda.html", {"Usuario":Usuario})
     else:
         return render(request, "Appcoder/busquedaComision.html", {"mensaje":"No se encuentra Usuario"})
     return HttpResponse(respuesta)
@@ -108,4 +126,6 @@ def buscaradoptante(request):
 
 
 #def busquedaComision(request):
-#    return render(request, "Appcoder/busquedaComision.html")
+#return render(request, "Appcoder/busquedaComision.html")
+
+'''
