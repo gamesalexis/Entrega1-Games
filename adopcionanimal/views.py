@@ -33,10 +33,10 @@ def perrosformulario(request):
             return render (request, "adopcionanimal/perros.html", {"mensaje":"Perro Cargado"})
     else:
         form= PerrosFormulario()
-    return render(request, "adopcionanimal/perrosformulario.html", {"formulario":form})
+        return render(request, "adopcionanimal/perrosformulario.html", {"formulario":form})
 
-'''
-    def gatosformulario(request):
+
+def gatosformulario(request):
 
     if request.method=="POST":
         form= GatosFormulario(request.POST)
@@ -51,10 +51,10 @@ def perrosformulario(request):
             return render (request, "adopcionanimal/gatos.html", {"mensaje":"Gato Cargado"})
     else:
         form= GatosFormulario()
-    #return render(request, "Appcoder/profeForm.html", {"formulario":form})
+        return render(request, "adopcionanimal/gatosformulario.html", {"formulario":form})
 
 
-def Usuariosformulario(request):
+def usuariosformulario(request):
 
     if request.method=="POST":
         form= UsuariosFormulario(request.POST)
@@ -71,13 +71,13 @@ def Usuariosformulario(request):
            #return render (request, "adopcionanimal/usuarios.html", {"mensaje":"Usuario Cargado"})
     else:
         form= UsuariosFormulario()
-    # return render(request, "Appcoder/profeForm.html", {"formulario":form})
+        return render(request, "adopcionanimal/usuariosformulario.html", {"formulario":form})
 
-'''
+
 #SECCION BUSQUEDA
 
 '''
-def buscarperro(request):
+def perrobuscar(request):
 
     if request.GET["Tamano"]:
         Tamano=request.GET["Tamano"]
@@ -88,7 +88,7 @@ def buscarperro(request):
     return HttpResponse(respuesta)
 
 
-def buscargato(request):
+def gatobuscar(request):
 
     if request.GET["Edad"]:
         Edad=request.GET["Edad"]
@@ -98,7 +98,7 @@ def buscargato(request):
         #return render(request, "Appcoder/busquedaComision.html", {"mensaje":"No se encuentra Gato"})
         #return HttpResponse(respuesta)
 
-def buscarusuario(request):
+def usuariobuscar (request):
 
     if request.GET["Apellido"]:
         Apellido=request.GET["Apellido"]

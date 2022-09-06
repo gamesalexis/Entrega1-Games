@@ -8,8 +8,11 @@ urlpatterns = [
     path("perros/", perros, name="perros"),
     path("gatos/", gatos, name="gatos"),
     path("usuarios/", adoptantes, name="usuarios"),
-    #FORMULARIOS
+   
+   #FORMULARIOS
     path("perrosformulario/", perrosformulario, name="perrosformulario"),
+    path("gatosformulario/", gatosformulario, name="gatosformulario"),
+    path("usuariosformulario/", usuariosformulario, name="usuariosformulario"),
+   
     #BUSQUEDA
-
 ]
