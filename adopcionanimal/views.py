@@ -30,7 +30,7 @@ def perrosformulario(request):
             Edad= info["Edad"]
             Perro= Perros(Nombre=Nombre, Raza=Raza, Tamano=Tamano, Edad=Edad)
             Perro.save()
-            return render (request, "adopcionanimal/perros.html", {"mensaje":"Perro Cargado"})
+            return render (request, "adopcionanimal/perros.html", {"mensaje":"Perro Cargado exitosamente!"})
     else:
         form= PerrosFormulario()
         return render(request, "adopcionanimal/perrosformulario.html", {"formulario":form})
@@ -48,7 +48,7 @@ def gatosformulario(request):
             Edad= info["Edad"]
             Gato= Gatos(Nombre=Nombre, Raza=Raza, Tamano=Tamano, Edad=Edad)
             Gato.save()
-            return render (request, "adopcionanimal/gatos.html", {"mensaje":"Gato Cargado"})
+            return render (request, "adopcionanimal/gatos.html", {"mensaje":"Gato Cargado exitosamente!"}) 
     else:
         form= GatosFormulario()
         return render(request, "adopcionanimal/gatosformulario.html", {"formulario":form})
@@ -68,7 +68,7 @@ def usuariosformulario(request):
             Email= info["Email"]
             Usuario= Usuarios(Nombre=Nombre, Apellido=Apellido, Sueldo=Sueldo, Edad=Edad, Direccion=Direccion, Email=Email)
             Usuario.save()
-           #return render (request, "adopcionanimal/usuarios.html", {"mensaje":"Usuario Cargado"})
+            return render (request, "adopcionanimal/usuarios.html", {"mensaje":"Usuario Cargado exitosamente!"})
     else:
         form= UsuariosFormulario()
         return render(request, "adopcionanimal/usuariosformulario.html", {"formulario":form})
