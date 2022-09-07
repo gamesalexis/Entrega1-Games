@@ -16,7 +16,11 @@ urlpatterns = [
    
     #BUSQUEDA
     path("perrosbuscar/", perrosbuscar, name="perrosbuscar"),
+    path("gatosbuscar/", gatosbuscar, name="gatosbuscar"),
+    path("usuariosbuscar/", usuariosbuscar, name="usuariosbuscar"),
 
     #RESULTADOS
     path("pbuscar/", pbuscar, name="pbuscar"),
+    path("gbuscar/", gbuscar, name="gbuscar"),
+    path("ubuscar/", ubuscar, name="ubuscar"),
 ]

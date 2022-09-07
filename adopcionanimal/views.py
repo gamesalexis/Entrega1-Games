@@ -89,29 +89,27 @@ def pbuscar(request):
     else:
         return render(request, "adopcionanimal/perrosbuscar.html", {"mensaje":"No se encuentra Perro"})
 
-'''
+def gatosbuscar(request):
+    return render(request, "adopcionanimal/gatosbuscar.html")
 
-def gatobuscar(request):
+def gbuscar(request):
 
-    if request.GET["Edad"]:
-        Edad=request.GET["Edad"]
+    if request.GET["edad"]:
+        Edad=request.GET["edad"]
         Gato=Gatos.objects.filter(Edad=Edad)
-        #return render(request, "Appcoder/resultadosBusqueda.html", {"Gato":Gato})
+        return render(request, "adopcionanimal/gatosresultados.html", {"Gato":Gato})
     else:
-        #return render(request, "Appcoder/busquedaComision.html", {"mensaje":"No se encuentra Gato"})
-        #return HttpResponse(respuesta)
+        return render(request, "adopcionanimal/gatosbuscar.html", {"mensaje":"No se encuentra Gato"})
 
-def usuariobuscar (request):
 
-    if request.GET["Apellido"]:
-        Apellido=request.GET["Apellido"]
-        Usuario=Usuarios.objects.filter(Apellido=Apellido)
-        #return render(request, "Appcoder/resultadosBusqueda.html", {"Usuario":Usuario})
+def usuariosbuscar(request):
+    return render(request, "adopcionanimal/usuariosbuscar.html")
+
+def ubuscar(request):
+
+    if request.GET["nombre"]:
+        Nombre=request.GET["nombre"]
+        Usuario=Usuarios.objects.filter(Nombre=Nombre)
+        return render(request, "adopcionanimal/usuariosresultados.html", {"Usuario":Usuario})
     else:
-       # return render(request, "Appcoder/busquedaComision.html", {"mensaje":"No se encuentra Usuario"})
-  #  return HttpResponse(respuesta)
-
-'''
-#OTRO CODIGO SIN DEFINIR
-#def busquedaComision(request):
-#return render(request, "Appcoder/busquedaComision.html")
+        return render(request, "adopcionanimal/usuariosbuscar.html", {"mensaje":"No se encuentra Usuario"})

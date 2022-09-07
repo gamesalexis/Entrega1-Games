@@ -15,17 +15,21 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'usuariosformulario' %}">Cargar Usuario</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'usuarios' %}">Buscar Usuario</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'usuariosbuscar' %}">Buscar Usuario</a></li>
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'inicio' %}">Inicio</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-<header class="masthead bg-primary text-white text-center">
-    <div class="container d-flex align-items-center flex-column">
-        <!-- Masthead Heading-->
-        <h1 class="masthead-heading text-uppercase mb-0">{{ mensaje }}</h1>
-        <!-- Icon Divider-->
-        <div class="divider-custom divider-light">
-        </div>
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Heading-->
+            <h1 class="masthead-heading text-uppercase mb-0">{{ mensaje }}</h1>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+            </div>
+             <!-- Portfolio Item 1-->
+                    </div>
+                    <img class="img-fluid" src={% static 'adopcionanimal/assets/img/portfolio/usuario1.jpg' %} alt="..." />
+                </div>
 {% endblock %}
