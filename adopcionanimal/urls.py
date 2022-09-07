@@ -15,5 +15,8 @@ urlpatterns = [
     path("usuariosformulario/", usuariosformulario, name="usuariosformulario"),
    
     #BUSQUEDA
-    
+    path("perrosbuscar/", perrosbuscar, name="perrosbuscar"),
+
+    #RESULTADOS
+    path("pbuscar/", pbuscar, name="pbuscar"),
 ]

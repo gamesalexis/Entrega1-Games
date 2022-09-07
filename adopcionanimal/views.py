@@ -76,17 +76,20 @@ def usuariosformulario(request):
 
 #SECCION BUSQUEDA
 
-'''
-def perrobuscar(request):
 
-    if request.GET["Tamano"]:
-        Tamano=request.GET["Tamano"]
-        Perro=Perros.objects.filter(Tamano=Tamano)
-        return render(request, "Appcoder/resultadosBusqueda.html", {"Tamano":Perro})
+def perrosbuscar(request):
+    return render(request, "adopcionanimal/perrosbuscar.html")
+
+def pbuscar(request):
+
+    if request.GET["raza"]:
+        Raza=request.GET["raza"]
+        Perro=Perros.objects.filter(Raza=Raza)
+        return render(request, "adopcionanimal/perrosresultados.html", {"Perro":Perro})
     else:
-        return render(request, "Appcoder/busquedaComision.html", {"mensaje":"No se encuentra Perro"})
-    return HttpResponse(respuesta)
+        return render(request, "adopcionanimal/perrosbuscar.html", {"mensaje":"No se encuentra Perro"})
 
+'''
 
 def gatobuscar(request):
 
