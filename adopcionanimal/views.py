@@ -113,3 +113,5 @@ def ubuscar(request):
         return render(request, "adopcionanimal/usuariosresultados.html", {"Usuario":Usuario})
     else:
         return render(request, "adopcionanimal/usuariosbuscar.html", {"mensaje":"No se encuentra Usuario"})
+
+#Se probo que todo funcionace bien
